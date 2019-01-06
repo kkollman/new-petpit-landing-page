@@ -1,0 +1,16 @@
+{
+  "type": "stateless",
+  "templatesDirPath": "./.templates",
+  "templateName": "petpit",
+  "path": "./src/components",
+  "jsExtension": "js",
+  "cssExtension": "scss",
+  "indexFile": true,
+  "connected": false,
+  "componentMethods": [],
+  "fileNames": {
+    "testFileMatch": "spec",
+    "componentFileName": "template.component",
+    "styleFileName": "template.styles"
+  }
+}

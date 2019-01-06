@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  padding-left: 50px;
+  padding-right: 50px;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    padding: 0 25px;
+  }
+}
+
+.left-logo {
+  padding-top: 35px;
+  max-width: 52px;
+
+  @media (max-width: 768px) {
+    padding-top: 10px;
+  }
+}
+
+.backblob {
+  height: auto;
+  width: 200px;
+  position: absolute;
+  top: -107px;
+  right: -130px;
+  transform: rotate(-17deg);
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+

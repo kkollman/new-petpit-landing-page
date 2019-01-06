@@ -1,0 +1,64 @@
+{
+  "extends": [
+  "standard",
+  "standard-react",
+  "prettier-standard"
+],
+  "plugins": ["prettier"],
+  "parser": "babel-eslint",
+  "env": {
+  "jest": true,
+    "browser": true,
+    "node": true
+},
+  "settings": {
+  "import/resolver": {
+    "alias": {
+      "map": [
+        ["api", "./src/api"],
+        ["common", "./src/common"],
+        ["components", "./src/components"],
+        ["config", "./src/config"],
+        ["data", "./src/data"],
+        ["models", "./src/models"],
+        ["routes", "./src/routes"],
+        ["stores", "./src/stores"],
+        ["styles", "./src/styles"],
+        ["utils", "./src/utils"],
+        ["contexts", "./src/contexts"]
+      ]
+    }
+  }
+},
+  "rules": {
+  "prettier/prettier": [
+    "error",
+    {
+      "bracketSpacing": true,
+      "jsxBracketSameLine": false,
+      "printWidth": 80,
+      "semi": false,
+      "singleQuote": true,
+      "tabWidth": 2,
+      "trailingComma": "none",
+      "useTabs": false
+    }
+  ],
+    "import/order": [
+    "error",
+    {
+      "groups": [["builtin", "external"], "internal", ["parent", "sibling"], "index"],
+      "newlines-between": "always"
+    }
+  ],
+    "no-unused-vars": [
+    "error",
+    {
+      "vars": "all",
+      "args": "after-used",
+      "ignoreRestSiblings": true
+    }
+  ],
+    "radix": "error"
+}
+}

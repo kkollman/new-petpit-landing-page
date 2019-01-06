@@ -1,0 +1,8 @@
+@import 'src/styles/variables';
+
+$component_name-background: $default-red;
+
+.component_name {
+  padding: 10px;
+  background: $component_name-background;
+}
