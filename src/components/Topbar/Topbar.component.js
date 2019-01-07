@@ -4,12 +4,13 @@ import { noop } from 'lodash'
 
 import styles from './Topbar.module.scss'
 
-const Topbar = ({ onClick }) => {
+const Topbar = ({ onClick, children }) => {
   return (
     <div
       className={styles.topbar}
       onClick={onClick}
     >
+      {children}
     </div>
   )
 }

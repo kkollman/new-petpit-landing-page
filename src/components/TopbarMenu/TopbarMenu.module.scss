@@ -1,0 +1,8 @@
+@import 'src/styles/variables';
+
+$topbarmenu-background: $default-red;
+
+.topbarmenu {
+  padding: 10px;
+  background: $topbarmenu-background;
+}

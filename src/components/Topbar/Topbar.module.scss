@@ -1,20 +1,18 @@
-.container {
+.topbar {
+  padding: 0 50px;
   display: flex;
-  flex-direction: row;
-  padding-left: 50px;
-  padding-right: 50px;
   justify-content: space-between;
   align-items: center;
   position: absolute;
   top: 0;
-  z-index: 2;
-  width: 100%;
-  overflow: hidden;
+  left: 0;
+  right: 0;
 
   @media (max-width: 768px) {
     padding: 0 25px;
   }
 }
+
 
 .left-logo {
   padding-top: 35px;
