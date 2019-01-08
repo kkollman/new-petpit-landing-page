@@ -1,0 +1,26 @@
+@import 'src/styles/variables';
+@import 'src/styles/typography';
+
+$button-background: $black;
+$button-text-color: $white;
+
+.button {
+  background-color: $button-background;
+  color: $button-text-color;
+  font-size: 11px;
+  line-height: 11px;
+  padding: 13px 30px;
+  border-radius: 30px;
+  box-shadow: 0 6px 16px 1px rgba(0,0,0,0.19);
+  z-index: 9999;
+  cursor: pointer;
+  -webkit-transform:translate3d(0,0,0);
+  @supports (-webkit-overflow-scrolling: touch) {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    right: 25px;
+    top: 20px;
+  }
+}

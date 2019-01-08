@@ -4,13 +4,15 @@ import { noop } from 'lodash'
 
 import styles from './TopbarMenu.module.scss'
 
+import Button from 'components/Button'
+
 const TopbarMenu = ({ onClick }) => {
   return (
     <div
       className={styles.topbarmenu}
       onClick={onClick}
     >
-      TopbarMenu
+      <Button label={'Pobierz aplikację'} />
     </div>
   )
 }
