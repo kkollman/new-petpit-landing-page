@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
 import Header from '../PageHead/header'
-import './layout.css'
+import styles from './Layout.module.scss'
 
 const Layout = ({ children }) => (
   <StaticQuery

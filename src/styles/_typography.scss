@@ -1,41 +1,40 @@
 @import 'src/styles/responsive';
-@import 'src/styles/functions/px-to-rem';
+@import 'src/styles/functions';
 
 ////////////////////////
 // GLOBAL-FONT-NAMES  //
 ////////////////////////
 
-$font-name: 'kyrial-sans-pro';
-$font-name-condensed: 'kyrial-sans-pro-cond';
+$font-name: 'Montserrat';
 
 ///////////////////
 // SIZES - WIDE  //
 ///////////////////
 
-$huge-wide: pxtorem(48px);
+$huge-wide: pxtorem(37px);
 $large-wide: pxtorem(32px);
 $bigger-wide: pxtorem(28px);
-$big-wide: pxtorem(24px);
-$medium-wide: pxtorem(20px);
+$big-wide: pxtorem(18px);
+$medium-wide: pxtorem(15px);
 $accent-wide: pxtorem(18px);
 $normal-wide: pxtorem(16px);
 $copy-wide: pxtorem(14px);
-$small-wide: pxtorem(12px);
+$small-wide: pxtorem(11px);
 $tiny-wide: pxtorem(10px);
 
 //////////////////////
 // SIZES - DESKTOP  //
 //////////////////////
 
-$huge-desktop: pxtorem(48px);
+$huge-desktop: pxtorem(37px);
 $large-desktop: pxtorem(32px);
 $bigger-desktop: pxtorem(28px);
-$big-desktop: pxtorem(24px);
-$medium-desktop: pxtorem(20px);
+$big-desktop: pxtorem(18px);
+$medium-desktop: pxtorem(15px);
 $accent-desktop: pxtorem(18px);
 $normal-desktop: pxtorem(16px);
 $copy-desktop: pxtorem(14px);
-$small-desktop: pxtorem(12px);
+$small-desktop: pxtorem(11px);
 $tiny-desktop: pxtorem(10px);
 
 ////////////////////
@@ -45,27 +44,27 @@ $tiny-desktop: pxtorem(10px);
 $huge-tablet: pxtorem(34px);
 $large-tablet: pxtorem(30px);
 $bigger-tablet: pxtorem(18px);
-$big-tablet: pxtorem(22px);
-$medium-tablet: pxtorem(20px);
+$big-tablet: pxtorem(16px);
+$medium-tablet: pxtorem(14px);
 $accent-tablet: pxtorem(16px);
 $normal-tablet: pxtorem(14px);
 $copy-tablet: pxtorem(13px);
-$small-tablet: pxtorem(11px);
+$small-tablet: pxtorem(10px);
 $tiny-tablet: pxtorem(10px);
 
 ////////////////////
 // SIZES - MOBILE //
 ////////////////////
 
-$huge-mobile: pxtorem(30px);
+$huge-mobile: pxtorem(34px);
 $large-mobile: pxtorem(30px);
 $bigger-mobile: pxtorem(18px);
-$big-mobile: pxtorem(20px);
-$medium-mobile: pxtorem(16px);
+$big-mobile: pxtorem(16px);
+$medium-mobile: pxtorem(14px);
 $accent-mobile: pxtorem(15px);
 $normal-mobile: pxtorem(14px);
 $copy-mobile: pxtorem(13px);
-$small-mobile: pxtorem(11px);
+$small-mobile: pxtorem(10px);
 $tiny-mobile: pxtorem(10px);
 
 /**

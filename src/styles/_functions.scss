@@ -1,6 +1,6 @@
-@import "styles/variables";
+@import "src/styles/variables";
 
-@function pxtorem($pixels, $context: 16px) {
+@function pxtorem($pixels, $context: 15px) {
   @if (unitless($pixels)) {
     $pixels: $pixels * 1px;
   }

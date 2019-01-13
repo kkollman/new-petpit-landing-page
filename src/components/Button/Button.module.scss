@@ -3,17 +3,19 @@
 
 $button-background: $black;
 $button-text-color: $white;
+$button-shadow: 0 6px 16px 1px rgba($black,0.19);
 
 .button {
+  @extend %font-size-small;
+
   background-color: $button-background;
   color: $button-text-color;
-  font-size: 11px;
-  line-height: 11px;
-  padding: 13px 30px;
+  padding: em(13px, 11px) em(30px, 11px);
   border-radius: 30px;
-  box-shadow: 0 6px 16px 1px rgba(0,0,0,0.19);
-  z-index: 9999;
+  box-shadow: $button-shadow;
+  z-index: $topmost;
   cursor: pointer;
+  //this is a hack for mobile safari:
   -webkit-transform:translate3d(0,0,0);
   @supports (-webkit-overflow-scrolling: touch) {
     display: none;
