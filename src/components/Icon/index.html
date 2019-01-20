@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <script src="https://rawgit.com/jonathantneal/svg4everybody/master/dist/svg4everybody.js"></script>
+    <script>svg4everybody();</script>
+    <title>SVG &lt;symbol&gt; sprite preview | svg-sprite</title>
+    <style>
+        @charset "UTF-8";
+        body {
+            padding: 0;
+            margin: 0;
+            color: #666;
+            background: #fafafa;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1em;
+            line-height: 1.4
+        }
+
+        header {
+            display: block;
+            padding: 3em 3em 2em 3em;
+            background-color: #fff
+        }
+
+        header p {
+            margin: 2em 0 0 0
+        }
+
+        section {
+            border-top: 1px solid #eee;
+            padding: 2em 3em 0 3em
+        }
+
+        section ul {
+            margin: 0;
+            padding: 0
+        }
+
+        section li {
+            display: inline;
+            display: inline-block;
+            background-color: #fff;
+            position: relative;
+            margin: 0 2em 2em 0;
+            vertical-align: top;
+            border: 1px solid #ccc;
+            padding: 1em 1em 3em 1em;
+            cursor: default
+        }
+
+        .icon-box {
+            margin: 0;
+            width: 144px;
+            height: 144px;
+            position: relative;
+            background: #3f4c6b; /* Old browsers */
+            background: -moz-linear-gradient(top, #3f4c6b 0%, #272f42 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(top, #3f4c6b 0%, #272f42 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom, #3f4c6b 0%, #272f42 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3f4c6b', endColorstr='#272f42', GradientType=0); /* IE6-9 */
+            color: #FFF;
+            fill: #FFF;
+            border: 1px solid #ccc;
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center
+        }
+
+        .icon-box__item {
+            height: 48px;
+            width: 48px;
+        }
+
+        .icon {
+            display: inline;
+            display: inline-block
+        }
+
+        h1 {
+            margin-top: 0
+        }
+
+        h2 {
+            margin: 0;
+            padding: 0;
+            font-size: 1em;
+            font-weight: normal;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            position: absolute;
+            left: 1em;
+            right: 1em;
+            bottom: 1em
+        }
+
+        footer {
+            display: block;
+            margin: 0;
+            padding: 0 3em 3em 3em
+        }
+
+        footer p {
+            margin: 0;
+            font-size: .7em
+        }
+
+        footer a {
+            color: #0f7595;
+            margin-left: 0
+        }
+    </style>
+
+    <!--
+
+    Sprite shape dimensions
+    ====================================================================================================
+    You will need to set the sprite shape dimensions via CSS when you use them as inline SVG, otherwise
+    they would become a huge 100% in size. You may use the following dimension classes for doing so.
+    They might well be outsourced to an external stylesheet of course.
+
+    -->
+
+    <style type="text/css">
+        	.svg-icon-blog-dims { width: 200px; height: 200px; }
+        	.svg-icon-bone-dims { width: 200px; height: 200px; }
+        	.svg-icon-bowl-dims { width: 200px; height: 200px; }
+        	.svg-icon-care-dims { width: 200px; height: 200px; }
+        	.svg-icon-cat-dims { width: 200px; height: 200px; }
+        	.svg-icon-collar-dims { width: 200px; height: 200px; }
+        	.svg-icon-dog-dims { width: 200px; height: 200px; }
+        	.svg-icon-dog-side-dims { width: 200px; height: 200px; }
+        	.svg-icon-doghouse-dims { width: 200px; height: 200px; }
+        	.svg-icon-facebook-dims { width: 155.14px; height: 155.14px; }
+        	.svg-icon-groom-dims { width: 200px; height: 200px; }
+        	.svg-icon-heart-dims { width: 200px; height: 200px; }
+        	.svg-icon-house-dims { width: 200px; height: 200px; }
+        	.svg-icon-instagram-dims { width: 56.7px; height: 56.7px; }
+        	.svg-icon-paw-dims { width: 200px; height: 200px; }
+        	.svg-icon-pet-hotel-dims { width: 200px; height: 200px; }
+        	.svg-icon-shelter-dims { width: 200px; height: 200px; }
+        	.svg-icon-shop-dims { width: 200px; height: 200px; }
+        	.svg-icon-suitcase-dims { width: 200px; height: 200px; }
+        	.svg-icon-vet-dims { width: 200px; height: 200px; }
+        	.svg-icon-whistle-dims { width: 200px; height: 200px; }
+        </style>
+    <!--
+    ====================================================================================================
+    -->
+
+</head>
+<body>
+
+<!--
+====================================================================================================
+-->
+
+<header>
+    <h1>Lifecents SVG icon sprite preview</h1>
+</header>
+
+<section>
+
+    <!--
+
+    B) Inline SVG with external sprite (IE 9-11 with polyfill only)
+    ====================================================================================================
+    These SVG images make use of an URL + fragment identifiers (IDs) and refer to the regular external
+    SVG sprite. They may be styled via CSS. (IE 9-11 with polyfill only)
+
+    -->
+
+    				<li title="icon-blog">
+    <div class="icon-box">
+
+        <!-- icon-blog -->
+        <svg class="icon-box__item" fill="white">
+            <use xlink:href="icons.svg#icon-blog"></use>
+        </svg>
+
+    </div>
+    <h2>icon-blog</h2>
+</li>
+    				<li title="icon-bone">
+    <div class="icon-box">
+
+        <!-- icon-bone -->
+        <svg class="icon-box__item" fill="white">
+            <use xlink:href="icons.svg#icon-bone"></use>
+        </svg>
+
+    </div>
+    <h2>icon-bone</h2>
+</li>
+    				<li title="icon-bowl">
+    <div class="icon-box">
+
+        <!-- icon-bowl -->
+        <svg class="icon-box__item" fill="white">
+            <use xlink:href="icons.svg#icon-bowl"></use>
+        </svg>
+
+    </div>
+    <h2>icon-bowl</h2>
+</li>
+    				<li title="icon-care">
+    <div class="icon-box">
+
+        <!-- icon-care -->
+        <svg class="icon-box__item" fill="white">
+            <use xlink:href="icons.svg#icon-care"></use>
+        </svg>
+
+    </div>
+    <h2>icon-care</h2>
+</li>
+    				<li title="icon-cat">
+    <div class="icon-box">
+
+        <!-- icon-cat -->
+        <svg class="icon-box__item" fill="white">
+            <use xlink:href="icons.svg#icon-cat"></use>
+        </svg>
+
+    </div>
+    <h2>icon-cat</h2>
+</li>
+    				<li title="icon-collar">
+    <div class="icon-box">
+
+        <!-- icon-collar -->
+        <svg class="icon-box__item" fill="white">
+            <use xlink:href="icons.svg#icon-collar"></use>
+        </svg>
+
+    </div>
+    <h2>icon-collar</h2>
+</li>
+    				<li title="icon-dog">
+    <div class="icon-box">
+
+        <!-- icon-dog -->
+        <svg class="icon-box__item" fill="white">
+            <use xlink:href="icons.svg#icon-dog"></use>
+        </svg>
+
+    </div>
+    <h2>icon-dog</h2>
+</li>
+    				<li title="icon-dog-side">
+    <div class="icon-box">
+
+        <!-- icon-dog-side -->
+        <svg class="icon-box__item" fill="white">
+            <use xlink:href="icons.svg#icon-dog-side"></use>
+        </svg>
+
+    </div>
+    <h2>icon-dog-side</h2>
+</li>
+    				<li title="icon-doghouse">
+    <div class="icon-box">
+
+        <!-- icon-doghouse -->
+        <svg class="icon-box__item" fill="white">
+            <use xlink:href="icons.svg#icon-doghouse"></use>
+        </svg>
+
+    </div>
+    <h2>icon-doghouse</h2>
+</li>
+    				<li title="icon-facebook">
+    <div class="icon-box">
+
+        <!-- icon-facebook -->
+        <svg class="icon-box__item" fill="white">
+            <use xlink:href="icons.svg#icon-facebook"></use>
+        </svg>
+
+    </div>
+    <h2>icon-facebook</h2>
+</li>
+    				<li title="icon-groom">
+    <div class="icon-box">
+
+        <!-- icon-groom -->
+        <svg class="icon-box__item" fill="white">
+            <use xlink:href="icons.svg#icon-groom"></use>
+        </svg>
+
+    </div>
+    <h2>icon-groom</h2>
+</li>
+    				<li title="icon-heart">
+    <div class="icon-box">
+
+        <!-- icon-heart -->
+        <svg class="icon-box__item" fill="white">
+            <use xlink:href="icons.svg#icon-heart"></use>
+        </svg>
+
+    </div>
+    <h2>icon-heart</h2>
+</li>
+    				<li title="icon-house">
+    <div class="icon-box">
+
+        <!-- icon-house -->
+        <svg class="icon-box__item" fill="white">
+            <use xlink:href="icons.svg#icon-house"></use>
+        </svg>
+
+    </div>
+    <h2>icon-house</h2>
+</li>
+    				<li title="icon-instagram">
+    <div class="icon-box">
+
+        <!-- icon-instagram -->
+        <svg class="icon-box__item" fill="white">
+            <use xlink:href="icons.svg#icon-instagram"></use>
+        </svg>
+
+    </div>
+    <h2>icon-instagram</h2>
+</li>
+    				<li title="icon-paw">
+    <div class="icon-box">
+
+        <!-- icon-paw -->
+        <svg class="icon-box__item" fill="white">
+            <use xlink:href="icons.svg#icon-paw"></use>
+        </svg>
+
+    </div>
+    <h2>icon-paw</h2>
+</li>
+    				<li title="icon-pet-hotel">
+    <div class="icon-box">
+
+        <!-- icon-pet-hotel -->
+        <svg class="icon-box__item" fill="white">
+            <use xlink:href="icons.svg#icon-pet-hotel"></use>
+        </svg>
+
+    </div>
+    <h2>icon-pet-hotel</h2>
+</li>
+    				<li title="icon-shelter">
+    <div class="icon-box">
+
+        <!-- icon-shelter -->
+        <svg class="icon-box__item" fill="white">
+            <use xlink:href="icons.svg#icon-shelter"></use>
+        </svg>
+
+    </div>
+    <h2>icon-shelter</h2>
+</li>
+    				<li title="icon-shop">
+    <div class="icon-box">
+
+        <!-- icon-shop -->
+        <svg class="icon-box__item" fill="white">
+            <use xlink:href="icons.svg#icon-shop"></use>
+        </svg>
+
+    </div>
+    <h2>icon-shop</h2>
+</li>
+    				<li title="icon-suitcase">
+    <div class="icon-box">
+
+        <!-- icon-suitcase -->
+        <svg class="icon-box__item" fill="white">
+            <use xlink:href="icons.svg#icon-suitcase"></use>
+        </svg>
+
+    </div>
+    <h2>icon-suitcase</h2>
+</li>
+    				<li title="icon-vet">
+    <div class="icon-box">
+
+        <!-- icon-vet -->
+        <svg class="icon-box__item" fill="white">
+            <use xlink:href="icons.svg#icon-vet"></use>
+        </svg>
+
+    </div>
+    <h2>icon-vet</h2>
+</li>
+    				<li title="icon-whistle">
+    <div class="icon-box">
+
+        <!-- icon-whistle -->
+        <svg class="icon-box__item" fill="white">
+            <use xlink:href="icons.svg#icon-whistle"></use>
+        </svg>
+
+    </div>
+    <h2>icon-whistle</h2>
+</li>
+    			</ul>
+
+    <!--
+    ====================================================================================================
+    -->
+
+</section>
+</body>
+</html>

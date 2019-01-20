@@ -3,6 +3,20 @@
 $topbarmenu-background: $default-red;
 
 .topbarmenu {
-  padding: 10px;
-  background: $topbarmenu-background;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 35px;
+  -webkit-transform: translate3d(0,0,0);
+  position: fixed;
+  right: 0;
+}
+
+.topbarIcon {
+  margin-right: 35px;
+}
+
+.pages {
+  display: flex;
+  margin-right: 25px;
 }

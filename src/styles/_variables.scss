@@ -4,7 +4,12 @@ $black: #000;
 $white: #fff;
 $browser-context: 16;
 
+//color names as per http://chir.ag/projects/name-that-color
+$silver-chalice: #b0b0b0;
 
 
 //z-stack layers
-$topmost: 9999;
+$topmost: 99999;
+$bottom: 99;
+$middle: 999;
+$top: 9999;

@@ -1,0 +1,20 @@
+{
+  "plugins": [
+    {
+      "convertStyleToAttrs": true
+    },
+    {
+      "removeAttrs": {
+        "attrs": "(stroke)"
+      }
+    },
+    {
+      "sortAttrs": true
+    },
+    {
+      "convertColors": {
+        "currentColor": true
+      }
+    }
+  ]
+}

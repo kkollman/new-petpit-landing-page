@@ -1,0 +1,23 @@
+{
+  "dest": "src/components/Icon/",
+  "log": "info",
+  "shape": {
+    "id": {
+      "generator": "icon-%s",
+      "whitespace": "-"
+    }
+  },
+  "mode": {
+    "symbol": {
+      "dest": ".",
+      "render": {
+        "css": false
+      },
+      "sprite": "icons.svg",
+      "example": {
+        "template": "svg-sprite.template.html",
+        "dest": "index.html"
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+@import 'src/styles/variables';
+@import 'src/styles/typography';
+
+$story-title-color: $black;
+$story-copy-color: $silver-chalice;
+
+.story {
+  @extend %font-size-copy;
+
+  display: flex;
+  flex-flow: column;
+  max-width: em(370px, 14px);
+}
+
+.title {
+  @extend %font-size-huge;
+
+  color: $story-title-color;
+  line-height: 1.1em;
+  font-weight: $bold;
+}
+
+
+.copy {
+  @extend %font-size-copy;
+
+  line-height: 1.5em;
+  color: $story-copy-color;
+}
+
+.title + .copy,
+.copy + .other {
+  margin-top: em(10px, 14px);
+}

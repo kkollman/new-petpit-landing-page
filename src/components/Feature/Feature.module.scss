@@ -1,0 +1,8 @@
+@import 'src/styles/variables';
+
+$feature-background: $default-red;
+
+.feature {
+  padding: 10px;
+  background: $feature-background;
+}

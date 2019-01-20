@@ -1,32 +1,34 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import cls from 'classnames'
 
-import styles from './Icon.module.scss'
+// import below is to import a svg file gatsby-way
+import icons from './icons.svg' // eslint-disable-line no-unused-vars
 
-//TODO: Find out a way to quickly import all files within icons folder
-//perhaps with svg-sprite module: generate all svgs into single svg places in /static folder and then import output file here
-import Blog from './Icons/blog.svg'
-
-const Icon = ({ name, color, size }) => {
+const Icon = ({ name, color, size, label, className }) => {
   return (
     <svg
-      className={styles.icon}
+      className={className}
       height={size}
-      fill={color}
+      width={size}
+      color={color}
+      role={label ? 'img' : null}
+      aria-labelledby={label ? `${name}-title` : null}
     >
-      <use xlinkHref={`#${name}`}
-      />
+      {label && <title id={`${name}-title`}>{label || name}</title>}
+      <use xlinkHref={`#icons_icon-${name}`} />
     </svg>
   )
 }
 
 Icon.propTypes = {
-  name: PropTypes.string,
+  name: PropTypes.string.isRequired,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  color: PropTypes.string
+  color: PropTypes.string,
+  label: PropTypes.string,
+  className: PropTypes.string
 }
 Icon.defaultProps = {
-  name: 'blog',
   size: 24,
   color: '#000'
 }

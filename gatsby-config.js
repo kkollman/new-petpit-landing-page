@@ -6,6 +6,8 @@ module.exports = {
     test: 'dupok'
   },
   plugins: [
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-sass`,
     {
@@ -17,12 +19,10 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
+        name: `img`,
         path: `${__dirname}/src/images`
       }
     },
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
     'gatsby-plugin-svg-sprite',
     {
       resolve: `gatsby-plugin-manifest`,
