@@ -22,7 +22,7 @@ $story-copy-color: $silver-chalice;
 
 
 .copy {
-  @extend %font-size-copy;
+  @extend %font-size-big;
 
   line-height: 1.5em;
   color: $story-copy-color;

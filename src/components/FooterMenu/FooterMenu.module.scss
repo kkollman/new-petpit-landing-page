@@ -1,0 +1,31 @@
+@import 'src/styles/variables';
+@import 'src/styles/typography';
+
+$link-text-color: $silver;
+
+.footer {
+  display: flex;
+  justify-content: center;
+}
+
+.footermenu {
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.link {
+  @extend %font-size-small;
+
+  color: $link-text-color;
+}
+
+.link + .link {
+  margin-left: 1ch;
+  text-decoration: none;
+
+  &:active {
+    text-decoration: none !important;
+  }
+}

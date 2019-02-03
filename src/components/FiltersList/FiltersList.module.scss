@@ -1,0 +1,9 @@
+@import 'src/styles/variables';
+
+$filterslist-background: $default-red;
+
+.filterslist {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}

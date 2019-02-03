@@ -1,8 +1,47 @@
 @import 'src/styles/variables';
+@import 'src/styles/typography';
 
 $feature-background: $default-red;
 
 .feature {
-  padding: 10px;
-  background: $feature-background;
+  @extend %font-size-copy;
+
+  display: flex;
+  flex-flow: row wrap;
+  width: 50%;
+  max-width: em(710, 14);
+  margin: 0 auto;
+
+  @include mobile {
+    flex-flow: column;
+  }
+}
+
+.panel {
+  @extend %font-size-copy;
+
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  flex: 1;
+
+  @include mobile {
+
+    & + & {
+      margin-top: 2em;
+    }
+  }
+
+  &.centered {
+    justify-content: center;
+  }
+}
+
+.padded .leftPanel{
+  padding-right: 3em;
+}
+
+.padded .rightPanel {
+  padding-left: 3em;
 }

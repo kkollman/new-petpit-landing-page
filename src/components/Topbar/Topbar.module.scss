@@ -1,3 +1,5 @@
+@import 'src/styles/variables';
+
 .topbar {
   padding: 0 50px;
   display: flex;
@@ -7,6 +9,7 @@
   top: 35px;
   left: 0;
   right: 0;
+  z-index: $topmost;
 
   @media (max-width: 768px) {
     padding: 0 25px;

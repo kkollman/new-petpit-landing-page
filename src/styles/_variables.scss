@@ -6,10 +6,16 @@ $browser-context: 16;
 
 //color names as per http://chir.ag/projects/name-that-color
 $silver-chalice: #b0b0b0;
-
+$silver: #bcbcbc;
+$chablis: #FFF4F4;
+$alabaster: #f7f7f7;
+$torch-red: #fd1857;
+$flamingo: #f85032;
+$radical-red: #fd1859;
 
 //z-stack layers
 $topmost: 99999;
 $bottom: 99;
 $middle: 999;
 $top: 9999;
+$underneath: -1;

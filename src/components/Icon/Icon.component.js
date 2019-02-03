@@ -29,8 +29,7 @@ Icon.propTypes = {
   className: PropTypes.string
 }
 Icon.defaultProps = {
-  size: 24,
-  color: '#000'
+  size: 24
 }
 
 export default Icon

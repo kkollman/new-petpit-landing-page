@@ -1,0 +1,8 @@
+@import 'src/styles/variables';
+
+$iconpin-background: $default-red;
+
+.iconpin {
+  padding: 10px;
+  background: $iconpin-background;
+}
