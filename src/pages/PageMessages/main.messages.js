@@ -40,6 +40,11 @@ const Messages = {
     header: 'Znasz mojego nowego człowieka?',
     copy:
       'Koty i psy ze schronisk, fundacji i domów tymczasowych czekają na swój dom. Dołączając do naszej społeczności możesz pomóc w adopcji bezdomnych zwierząt'
+  },
+  appLinksSection: {
+    header: 'Aplikacja dostępna w sklepach!',
+    copy:
+      'Nasza aplikacja jest już dostępna w sklepach :) Czekamy na wasze uwagi - tworzymy PetPit wspólnie z Wami!'
   }
 }
 

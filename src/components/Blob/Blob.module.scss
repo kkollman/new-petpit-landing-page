@@ -1,0 +1,8 @@
+@import 'src/styles/variables';
+
+$blob-background: $default-red;
+
+.blob {
+  padding: 10px;
+  background: $blob-background;
+}
