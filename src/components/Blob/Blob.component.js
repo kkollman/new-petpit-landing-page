@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import styles from './Blob.module.scss'
 
-const Blob = ({ classname, outline, height }) => {
+const Blob = ({ className, outline, size }) => {
   return outline ? (
     <svg
       id="graphics"
@@ -12,8 +12,8 @@ const Blob = ({ classname, outline, height }) => {
       fill="none"
       stroke="url(#blob-linear-gradient)"
       strokeWidth="0.05"
-      height={height || '400px'}
-      className={classname}
+      height={size || '400px'}
+      className={className}
     >
       <defs>
         <linearGradient
@@ -38,8 +38,8 @@ const Blob = ({ classname, outline, height }) => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 71.9 61"
-      height={height || '400px'}
-      className={classname}
+      height={size || '400px'}
+      className={className}
     >
       <linearGradient
         id="blob-full-gradient"

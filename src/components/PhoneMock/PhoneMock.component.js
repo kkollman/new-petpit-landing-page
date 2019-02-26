@@ -5,11 +5,13 @@ import styles from './PhoneMock.module.scss'
 
 const PhoneMock = ({ children }) => {
   return (
-    <div
-      className={styles.phonemock}
-    >
-      <div className={styles.content}>
-        { children }
+    <div className={styles.phoneWrapper}>
+      <div
+        className={styles.phonemock}
+      >
+        <div className={styles.content}>
+          { children }
+        </div>
       </div>
     </div>
   )

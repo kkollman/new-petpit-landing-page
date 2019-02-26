@@ -13,6 +13,7 @@
  */
 
 //index page styles
+// TODO: przeniesc style dotyczące index page'a do osobnego pliku
 $badge-background: $white;
 $badge-shadow: 0 6px 16px 1px rgba($black, .19);
 $second-section-background-color: $chablis;
@@ -89,7 +90,7 @@ $pinned-map-section-bg: $alabaster;
 }
 
 .details-view {
-  padding-bottom: em(50px, 15px);
+  padding-bottom: em(25px, 15px);
 }
 
 .filters {
@@ -170,9 +171,42 @@ $pinned-map-section-bg: $alabaster;
 }
 
 .doggo-wrapper {
+  @extend %font-size-normal;
   position: absolute;
-  top: 0px;
+  top: 140px;
   z-index: $topmost;
-  margin-top: 120px;
-  transform: translateX(-70%);
+  transform: translateX(-80%);
+  width: em(420px, 16px);
+}
+
+.map-blob {
+  position: absolute;
+  left: -10%;
+  top: 23%
+}
+
+.cattoWrapper {
+  @extend %font-size-normal;
+
+  position: absolute;
+  width: em(550);
+  bottom: -140px;
+  right: -164%;
+}
+
+.pinnedSectionMock {
+  display: flex;
+  justify-content: center;
+  padding-left: em(70px);
+}
+
+.thinDoggoImage {
+  position: absolute;
+  left: -10px;
+  bottom: 0;
+  max-width: 280px;
+
+  @include mobile {
+    max-width: 240px;
+  }
 }

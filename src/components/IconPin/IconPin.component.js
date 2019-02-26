@@ -1,19 +1,34 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import cls from 'classnames'
 
-import styles from './IconPin.module.scss'
+// import below is to import a svg file gatsby-way
+import icons from './pin.svg' // eslint-disable-line no-unused-vars
 
-const IconPin = ({}) => {
+const PinIcon = ({ name, color, size, label, className }) => {
   return (
-    <div
-      className={styles.iconpin}
+    <svg
+      className={className}
+      height={size}
+      width={size}
+      role={label ? 'img' : null}
+      aria-labelledby={label ? `${name}-title` : null}
     >
-      IconPin
-    </div>
+      {label && <title id={`${name}-title`}>{label || name}</title>}
+      <use xlinkHref={`#pin_icon-${name}`} />
+    </svg>
   )
 }
 
-IconPin.propTypes = {}
-IconPin.defaultProps = {}
+PinIcon.propTypes = {
+  name: PropTypes.string.isRequired,
+  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  color: PropTypes.string,
+  label: PropTypes.string,
+  className: PropTypes.string
+}
+PinIcon.defaultProps = {
+  size: 24
+}
 
-export default IconPin
+export default PinIcon

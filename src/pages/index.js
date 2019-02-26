@@ -14,6 +14,11 @@ import doggyImg from 'images/doggy.png'
 import doggyImgL from 'images/doggy_large.png'
 import doggyImgM from 'images/doggy_medium.png'
 import doggyImgS from 'images/doggy_small.png'
+import cattoImgL from 'images/catto@2.png'
+import cattoImg from 'images/catto.png'
+import cattoImgM from 'images/catto_400.png'
+import cattoImgS from 'images/catto_350.png'
+import thinDoggoImg from 'images/thinDoggo.png'
 
 import PageLayout from 'components/PageLayout'
 import Layout from 'components/Layout/Layout.component.js'
@@ -26,6 +31,7 @@ import Feature from 'components/Feature'
 import FiltersList from 'components/FiltersList'
 import FooterMenu from 'components/FooterMenu'
 import Blob from 'components/Blob'
+import IconPin from 'components/IconPin'
 
 import messages from './PageMessages/main.messages'
 import styles from '../components/PageLayout/PageLayout.module.scss'
@@ -34,26 +40,23 @@ const IndexPage = () => (
   <Layout>
     <section className={cls(styles.intro, styles.section)}>
       <Feature
-        padded
         centerContent={false}
         leftPanel={
           <Fragment>
             <div className={styles.doggoWrapper}>
-              <Parallax
-                offsetYMax="150px"
-                offsetYMin="-400px">
+              <Parallax offsetYMax="0px" offsetYMin="-380px">
                 <img
                   className={styles.doggoImage}
                   src={doggyImg}
                   srcSet={`
-        ${doggyImgL} 535w,
+        ${doggyImgL} 580w,
         ${doggyImgM} 321w,
         ${doggyImgS} 270w
         `}
                   sizes={`
           (max-width: 768px) 270px,
           (max-width: 1180px) 321px,
-          (max-width: 1920px) 423px,
+          (max-width: 1920px) 420px
         `}
                   alt={messages.imageAlts.doggo}
                 />
@@ -62,6 +65,7 @@ const IndexPage = () => (
             <PhoneMock>
               <img src={mapView} alt={messages.imageAlts.map} />
             </PhoneMock>
+            <Blob size={300} className={styles.mapBlob} />
           </Fragment>
         }
         rightPanel={
@@ -119,10 +123,32 @@ const IndexPage = () => (
           </PhoneMock>
         }
         rightPanel={
-          <Story
-            header={messages.detailsView.header}
-            copy={messages.detailsView.copy}
-          />
+          <Fragment>
+            <Story
+              header={messages.detailsView.header}
+              copy={messages.detailsView.copy}
+            />
+            <div className={styles.cattoWrapper}>
+              <Parallax offsetYMax="50px" offsetYMin="-250px">
+                <picture className={styles.cattoImage}>
+                  <source media={`(max-width: 768)`} srcSet={`${cattoImgM}`} />
+                  <source
+                    media={`(max-width: 1180px)`}
+                    srcSet={`${cattoImgS}`}
+                  />
+                  <source
+                    media={`(min-width: 1920px)`}
+                    srcSet={`${cattoImgL}`}
+                  />
+                  <img
+                    src={cattoImg}
+                    srcSet={`${cattoImg}`}
+                    alt={messages.imageAlts.catto}
+                  />
+                </picture>
+              </Parallax>
+            </div>
+          </Fragment>
         }
       />
     </section>
@@ -140,6 +166,11 @@ const IndexPage = () => (
       </div>
     </section>
     <section className={cls(styles.pinnedMap, styles.section)}>
+        <img
+            className={styles.thinDoggoImage}
+            src={thinDoggoImg}
+            alt={messages.imageAlts.thinDoggo}
+          />
       <Feature
         leftPanel={
           <Story
@@ -148,9 +179,11 @@ const IndexPage = () => (
           />
         }
         rightPanel={
-          <PhoneMock>
-            <img src={pinnedMap} alt={messages.imageAlts.pinnedMap} />
-          </PhoneMock>
+          <div className={styles.pinnedSectionMock}>
+            <PhoneMock>
+              <img src={pinnedMap} alt={messages.imageAlts.pinnedMap} />
+            </PhoneMock>
+          </div>
         }
       />
     </section>
