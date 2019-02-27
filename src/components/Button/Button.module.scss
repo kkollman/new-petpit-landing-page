@@ -8,6 +8,7 @@ $button-shadow: 0 6px 16px 1px rgba($black,0.19);
 .button {
   @extend %font-size-small;
 
+  font-weight: $light;
   background-color: $button-background;
   color: $button-text-color;
   padding: em(13px, 11px) em(30px, 11px);

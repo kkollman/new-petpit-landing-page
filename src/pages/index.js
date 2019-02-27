@@ -35,14 +35,26 @@ import IconPin from 'components/IconPin'
 
 import messages from './PageMessages/main.messages'
 import styles from '../components/PageLayout/PageLayout.module.scss'
+import PinIcon from '../components/IconPin/IconPin.component'
 
 const IndexPage = () => (
   <Layout>
     <section className={cls(styles.intro, styles.section)}>
+      <div className={styles.introSmallBlobWrapper}>
+        <Blob size={170} />
+      </div>
+      <div className={styles.introBlobWrapper}>
+        <Parallax offsetYMax="80px" offsetYMin="-80px">
+          <Blob outline size={800} />
+        </Parallax>
+      </div>
       <Feature
         centerContent={false}
         leftPanel={
           <Fragment>
+            <div className={styles.pawPinWrapper}>
+              <IconPin name={'paw'} size={75} />
+            </div>
             <div className={styles.doggoWrapper}>
               <Parallax offsetYMax="0px" offsetYMin="-380px">
                 <img
@@ -70,6 +82,14 @@ const IndexPage = () => (
         }
         rightPanel={
           <Fragment>
+            <div className={styles.groomPinWrapper}>
+              <IconPin name={'groomer'} size={45} />
+            </div>
+            <div className={styles.doggoPinWrapper}>
+              <Parallax offsetYMax="-190px" offsetYMin="1000px">
+                <IconPin name={'dog'} size={115} />
+              </Parallax>
+            </div>
             <div className={styles.badge}>
               <PetpitLogo colored size={65} />
             </div>
@@ -100,6 +120,11 @@ const IndexPage = () => (
     <section className={cls(styles.friendlyPlaces, styles.section)}>
       <div className={styles.skewedBackgroundWrapper}>
         <div className={styles.skewedBackground} />
+      </div>
+      <div className={styles.friendlyPlacesBlobWrapper}>
+        <Parallax offsetXMax="0px" offsetXMin="-80px">
+          <Blob outline size={560}/>
+        </Parallax>
       </div>
       <Feature
         leftPanel={
@@ -165,12 +190,15 @@ const IndexPage = () => (
         </div>
       </div>
     </section>
+    <div className={styles.filterPinWrapper}>
+      <IconPin name={'logo'} size={40}/>
+    </div>
     <section className={cls(styles.pinnedMap, styles.section)}>
-        <img
-            className={styles.thinDoggoImage}
-            src={thinDoggoImg}
-            alt={messages.imageAlts.thinDoggo}
-          />
+      <img
+        className={styles.thinDoggoImage}
+        src={thinDoggoImg}
+        alt={messages.imageAlts.thinDoggo}
+      />
       <Feature
         leftPanel={
           <Story
@@ -179,14 +207,24 @@ const IndexPage = () => (
           />
         }
         rightPanel={
-          <div className={styles.pinnedSectionMock}>
-            <PhoneMock>
-              <img src={pinnedMap} alt={messages.imageAlts.pinnedMap} />
-            </PhoneMock>
-          </div>
+          <Fragment>
+            <div className={styles.housePinWrapper}>
+              <Parallax offsetYMax="50px" offsetYMin="-250px">
+                <IconPin name={'home'} size={70} />
+              </Parallax>
+            </div>
+            <div className={styles.pinnedSectionMock}>
+              <PhoneMock>
+                <img src={pinnedMap} alt={messages.imageAlts.pinnedMap} />
+              </PhoneMock>
+            </div>
+          </Fragment>
         }
       />
     </section>
+    <div className={styles.bowlPinWrapper}>
+     <PinIcon name={'bowl'} size={70}/>
+    </div>
     <section className={cls(styles.section, styles.appLinksSection)}>
       <div className={styles.container}>
         <Story

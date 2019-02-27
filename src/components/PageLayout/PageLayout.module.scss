@@ -210,3 +210,64 @@ $pinned-map-section-bg: $alabaster;
     max-width: 240px;
   }
 }
+
+//TODO: extract common style of wrappers to a separate class or mixin
+
+.doggoPinWrapper {
+  position: absolute;
+  right: -33%;
+  top: 55%;
+}
+
+.pawPinWrapper {
+  position: absolute;
+  top: 0;
+  left: -25%;
+}
+
+.groomPinWrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.filterPinWrapper {
+  position: absolute;
+  margin: 0 auto;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: $top;
+}
+
+.housePinWrapper {
+  position: absolute;
+  right: -20%;
+  bottom: 4%;
+}
+
+.bowlPinWrapper {
+  position: absolute;
+  left: 33%;
+  z-index: $top;
+  transform: translateY(-35%);
+}
+
+.introBlobWrapper {
+  position: absolute;
+  top: -84%;
+  left: 16%;
+}
+
+.introSmallBlobWrapper {
+  position: absolute;
+  right: -120px;
+  top: -121px;
+  transform: rotate(-29deg);
+}
+
+.friendlyPlacesBlobWrapper {
+  position: absolute;
+  left: -11%;
+  top: -60%;
+  transform: rotate(-45deg);
+}

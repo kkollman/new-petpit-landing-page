@@ -5,17 +5,17 @@ import cls from 'classnames'
 // import below is to import a svg file gatsby-way
 import icons from './pin.svg' // eslint-disable-line no-unused-vars
 
-const PinIcon = ({ name, color, size, label, className }) => {
+const PinIcon = ({ name, size, label, className }) => {
   return (
     <svg
       className={className}
-      height={size}
       width={size}
+      height={1.25 * size}
       role={label ? 'img' : null}
       aria-labelledby={label ? `${name}-title` : null}
     >
       {label && <title id={`${name}-title`}>{label || name}</title>}
-      <use xlinkHref={`#pin_icon-${name}`} />
+      <use xlinkHref={`#pin_icon-${name}`}  width={size} />
     </svg>
   )
 }
@@ -23,7 +23,6 @@ const PinIcon = ({ name, color, size, label, className }) => {
 PinIcon.propTypes = {
   name: PropTypes.string.isRequired,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  color: PropTypes.string,
   label: PropTypes.string,
   className: PropTypes.string
 }

@@ -19,6 +19,7 @@ $link-text-color: $silver;
 
 .link {
   @extend %font-size-small;
+  font-weight: $light;
 
   color: $link-text-color;
 }

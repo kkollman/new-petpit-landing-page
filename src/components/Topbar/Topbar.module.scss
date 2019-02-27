@@ -26,16 +26,3 @@
   }
 }
 
-.backblob {
-  height: auto;
-  width: 200px;
-  position: absolute;
-  top: -107px;
-  right: -130px;
-  transform: rotate(-17deg);
-
-  @media (max-width: 768px) {
-    display: none;
-  }
-}
-
