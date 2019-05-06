@@ -1,0 +1,79 @@
+.page {
+  min-height: 100vh;
+  position: relative;
+  font-size: 16px;
+}
+
+.top {
+  padding-top: 250px;
+  position: relative;
+  overflow: visible;
+
+  @media (max-width: 768px) {
+    padding-top: 120px;
+  }
+}
+
+.blob {
+  position: absolute;
+  height: auto;
+  width: 210px;
+  z-index: 1;
+  left: 440px;
+  top: -70px;
+  transform: translateX(-50%) rotate(-45deg);
+}
+
+.loop {
+  position: absolute;
+  top: -170px;
+  left: -30px;
+  transform: scale(1.5);
+
+  @media (max-width: 768px) {
+    top: -200px;
+  }
+}
+
+.header {
+  font-family: Montserrat;
+}
+
+.paragraph {
+  font-family: Montserrat;
+}
+
+.backblob {
+  height: auto;
+  width: 200px;
+  position: absolute;
+  top: -107px;
+  right: -130px;
+  transform: rotate(-17deg);
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.container {
+  max-width: 550px;
+  margin: 0 auto 50px;
+  position: relative;
+
+  @media (max-width: 1024px) {
+    max-width: 500px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0 45px;
+  }
+
+}
+
+.rightBlob {
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translate(70%, -60%);
+}

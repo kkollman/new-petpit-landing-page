@@ -4,9 +4,17 @@ import cls from 'classnames'
 
 import styles from './Feature.module.scss'
 
-const Feature = ({ leftPanel, rightPanel, padded, centerContent }) => {
+const Feature = ({
+  leftPanel,
+  rightPanel,
+  padded,
+  centerContent,
+  className
+}) => {
   return (
-    <article className={cls(styles.feature, padded && styles.padded)}>
+    <article
+      className={cls(styles.feature, padded && styles.padded, className)}
+    >
       {leftPanel && (
         <section
           className={cls(
@@ -37,7 +45,8 @@ Feature.propTypes = {
   leftPanel: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   rightPanel: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   centerContent: PropTypes.bool,
-  padded: PropTypes.bool
+  padded: PropTypes.bool,
+  className: PropTypes.string
 }
 Feature.defaultProps = {
   centerContent: true

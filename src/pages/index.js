@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react'
 import cls from 'classnames'
 import { Parallax } from 'react-scroll-parallax'
+import { Element, Link as Scroll } from 'react-scroll'
+
 // import images
 import appStoreLogo from 'images/appstore.png'
 import googlePlayLogo from 'images/google_play.png'
@@ -20,18 +22,16 @@ import cattoImgM from 'images/catto_400.png'
 import cattoImgS from 'images/catto_350.png'
 import thinDoggoImg from 'images/thinDoggo.png'
 
-import PageLayout from 'components/PageLayout'
+// import components
 import Layout from 'components/Layout/Layout.component.js'
-import Topbar from 'components/Topbar'
 import PetpitLogo from 'components/PetpitLogo'
-import TopbarMenu from 'components/TopbarMenu'
 import PhoneMock from 'components/PhoneMock'
 import Story from 'components/Story'
 import Feature from 'components/Feature'
 import FiltersList from 'components/FiltersList'
-import FooterMenu from 'components/FooterMenu'
 import Blob from 'components/Blob'
 import IconPin from 'components/IconPin'
+import Button from 'components/Button'
 
 import messages from './PageMessages/main.messages'
 import styles from '../components/PageLayout/PageLayout.module.scss'
@@ -39,6 +39,12 @@ import PinIcon from '../components/IconPin/IconPin.component'
 
 const IndexPage = () => (
   <Layout>
+    <Scroll to="apps" smooth>
+      <Button
+        label={'Pobierz aplikację'}
+        className={cls(styles.appButton, styles.mobile)}
+      />
+    </Scroll>
     <section className={cls(styles.intro, styles.section)}>
       <div className={styles.introSmallBlobWrapper}>
         <Blob size={170} />
@@ -49,6 +55,7 @@ const IndexPage = () => (
         </Parallax>
       </div>
       <Feature
+        className={styles.mobileReversed}
         centerContent={false}
         leftPanel={
           <Fragment>
@@ -90,7 +97,7 @@ const IndexPage = () => (
                 <IconPin name={'dog'} size={115} />
               </Parallax>
             </div>
-            <div className={styles.badge}>
+            <div className={cls(styles.badge, styles.nonMobile)}>
               <PetpitLogo colored size={65} />
             </div>
             <Story header={messages.intro.header} copy={messages.intro.copy} />
@@ -123,7 +130,7 @@ const IndexPage = () => (
       </div>
       <div className={styles.friendlyPlacesBlobWrapper}>
         <Parallax offsetXMax="0px" offsetXMin="-80px">
-          <Blob outline size={560}/>
+          <Blob outline size={560} />
         </Parallax>
       </div>
       <Feature
@@ -134,14 +141,29 @@ const IndexPage = () => (
           />
         }
         rightPanel={
-          <PhoneMock>
-            <img src={filtersView} alt={messages.imageAlts.map} />
-          </PhoneMock>
+          <div className={styles.friendlyPlacesPhoneMock}>
+            <PhoneMock>
+              <img src={filtersView} alt={messages.imageAlts.map} />
+            </PhoneMock>
+          </div>
         }
       />
     </section>
     <section className={cls(styles.detailsView, styles.section)}>
+      <div className={styles.cattoBlobWrapper}>
+        <div className={styles.cattoBlob}>
+          <Parallax offsetYMax="50px" offsetYMin="0px">
+            <Blob outline size={500} />
+          </Parallax>
+        </div>
+        <Blob
+          className={cls(styles.cattoBlob, styles.cattoBlobTwo)}
+          outline
+          size={420}
+        />
+      </div>
       <Feature
+        className={styles.detailsViewFeature}
         leftPanel={
           <PhoneMock>
             <img src={profileView} alt={messages.imageAlts.profileView} />
@@ -178,6 +200,9 @@ const IndexPage = () => (
       />
     </section>
     <section className={cls(styles.filters, styles.section)}>
+      <div className={styles.filtersBlob}>
+        <Blob outline size={380} />
+      </div>
       <div className={styles.filtersSectionContent}>
         <div className={styles.filtersList}>
           <FiltersList />
@@ -191,7 +216,7 @@ const IndexPage = () => (
       </div>
     </section>
     <div className={styles.filterPinWrapper}>
-      <IconPin name={'logo'} size={40}/>
+      <IconPin name={'logo'} size={40} />
     </div>
     <section className={cls(styles.pinnedMap, styles.section)}>
       <img
@@ -199,6 +224,11 @@ const IndexPage = () => (
         src={thinDoggoImg}
         alt={messages.imageAlts.thinDoggo}
       />
+      <div className={styles.pinnedBlob}>
+        <Parallax offsetYMax="80px" offsetYMin="-60px">
+          <Blob outline size={600} />
+        </Parallax>
+      </div>
       <Feature
         leftPanel={
           <Story
@@ -223,9 +253,9 @@ const IndexPage = () => (
       />
     </section>
     <div className={styles.bowlPinWrapper}>
-     <PinIcon name={'bowl'} size={70}/>
+      <PinIcon name={'bowl'} size={70} />
     </div>
-    <section className={cls(styles.section, styles.appLinksSection)}>
+    <section className={cls(styles.section, styles.appLinksSection)} id="apps">
       <div className={styles.container}>
         <Story
           header={messages.appLinksSection.header}

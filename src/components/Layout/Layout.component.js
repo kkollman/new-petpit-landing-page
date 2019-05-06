@@ -17,7 +17,6 @@ const Layout = ({ children }) => (
           site {
             siteMetadata {
               title
-              test
             }
           }
         }
@@ -25,10 +24,17 @@ const Layout = ({ children }) => (
       render={data => (
         <>
           <Helmet
-            title={data.site.siteMetadata.test}
+            title={data.site.siteMetadata.title}
             meta={[
-              { name: 'description', content: 'Sample' },
-              { name: 'keywords', content: 'sample, something' }
+              {
+                name: 'description',
+                content: data.site.siteMetadata.description
+              },
+              {
+                name: 'keywords',
+                content:
+                  'pies, kot, psy, koty, aplikacja, petpit, pet, app, weterynarz, behawiorysta, hotel dla zwierząt, weterynarze, hodowla, hodowle, aplikacja'
+              }
             ]}
           >
             <html lang="en" />

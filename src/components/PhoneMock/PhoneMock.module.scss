@@ -26,4 +26,10 @@ $phonemock-background: $default-red;
 
 .phone-wrapper {
   width: 100%;
+
+  @include mobile {
+    display: flex;
+    justify-content: center;
+    padding-left: 15px;
+  }
 }

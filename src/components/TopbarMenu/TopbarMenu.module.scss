@@ -1,22 +1,42 @@
 @import 'src/styles/variables';
+@import 'src/styles/responsive';
 
 $topbarmenu-background: $default-red;
+
+.topbarMenuWrapper {
+  display: flex;
+  flex-flow: row;
+  position: fixed;
+  right: 35px;
+
+  @include mobile {
+    position: absolute;
+    right: 0;
+  }
+}
 
 .topbarmenu {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  margin-right: 35px;
   -webkit-transform: translate3d(0,0,0);
-  position: fixed;
-  right: 0;
+
+  @include mobile {
+    flex-flow: column;
+  }
 }
 
 .topbarIcon {
-  margin-right: 35px;
+  margin-right: em(35px);
 }
 
 .pages {
   display: flex;
-  margin-right: 25px;
+}
+
+.topbarButtonWrapper {
+
+  @include mobile {
+    display: none;
+  }
 }

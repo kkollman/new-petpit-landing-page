@@ -12,8 +12,13 @@ $feature-background: $default-red;
   max-width: em(710, 14);
   margin: 0 auto;
 
+  @include tablet {
+    width: 64%;
+  }
+
   @include mobile {
     flex-flow: column;
+    width: 85%;
   }
 }
 
@@ -27,10 +32,7 @@ $feature-background: $default-red;
   flex: 1;
 
   @include mobile {
-
-    & + & {
-      margin-top: 2em;
-    }
+    margin: 2em auto;
   }
 
   &.centered {

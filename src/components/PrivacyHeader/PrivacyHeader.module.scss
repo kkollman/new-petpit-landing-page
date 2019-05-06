@@ -1,0 +1,55 @@
+.container {
+  font-family: Montserrat;
+  position: relative;
+}
+
+.header {
+  display: flex;
+  font-family: Montserrat;
+  flex-flow: row wrap;
+}
+
+h2.header {
+  font-size: 15px;
+  padding-top: 4px;
+
+  @media (min-width: 1600px) {
+    font-size: 18px;
+  }
+}
+
+.title {
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 13px;
+
+  @media (min-width: 1600px) {
+    font-size: 16px;
+  }
+}
+
+.paragraph, ul, li, ol, .container {
+  font-size: 11px;
+  line-height: 20px;
+  color: #b0b0b0;
+
+  @media (min-width: 1600px) {
+    font-size: 13px;
+  }
+}
+
+.number {
+  color: #b0b0b0;
+  text-transform: uppercase;
+  text-align: right;
+  margin-right: 10px;
+  position: absolute;
+  left: -7px;
+  top: 2px;
+  transform: translateX(-100%);
+  font-size: 14px;
+  padding: 0;
+
+  @media (min-width: 1600px) {
+    padding-top: 7px;
+  }
+}

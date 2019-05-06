@@ -2,8 +2,8 @@ const path = require('path')
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Startxer',
-    test: 'dupok'
+    title: 'Petpit App',
+    description: 'Aplikacja dla fanów psów i kotów!'
   },
   plugins: [
     'gatsby-transformer-sharp',
@@ -34,6 +34,32 @@ module.exports = {
         theme_color: '#663399',
         display: 'minimal-ui',
         icon: 'src/images/gatsby-icon.png' // This path is relative to the root of the site.
+      }
+    },
+    {
+      resolve: `gatsby-plugin-favicon`,
+      options: {
+        logo: './src/assets/favicon.png',
+        injectHTML: true,
+        icons: {
+          android: true,
+          appleIcon: true,
+          appleStartup: true,
+          coast: true,
+          favicons: true,
+          firefox: true,
+          twitter: true,
+          yandex: true,
+          windows: true
+        }
+      }
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-126666504-1',
+        // Puts tracking script in the head instead of the body
+        head: true
       }
     },
     'gatsby-plugin-offline',
