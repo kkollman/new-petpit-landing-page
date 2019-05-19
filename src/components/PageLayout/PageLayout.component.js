@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cls from 'classnames'
-import {Link} from 'gatsby'
+import { Link } from 'gatsby'
 
 import Topbar from 'components/Topbar/index'
 import TopbarMenu from 'components/TopbarMenu/index'
@@ -13,10 +13,12 @@ const PageLayout = ({ children, className }) => {
   return (
     <div className={cls(styles.pageLayout, className)}>
       <Topbar>
-        <Link to='/'>
+        <Link to="/">
           <PetpitLogo size={52} colored />
         </Link>
-        {window.location.pathname === '/' && <TopbarMenu />}
+        {// Gatsby sometimes crashes when trying to reach global variables during build, therefore I need to check if window is defined first
+        typeof window !== `undefined` &&
+          (window.location.pathname === '/' && <TopbarMenu />)}
       </Topbar>
       {children}
     </div>

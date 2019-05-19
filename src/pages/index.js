@@ -33,7 +33,7 @@ import Blob from 'components/Blob'
 import IconPin from 'components/IconPin'
 import Button from 'components/Button'
 
-import messages from './PageMessages/main.messages'
+import messages from '../messages/main.messages'
 import styles from '../components/PageLayout/PageLayout.module.scss'
 import PinIcon from '../components/IconPin/IconPin.component'
 

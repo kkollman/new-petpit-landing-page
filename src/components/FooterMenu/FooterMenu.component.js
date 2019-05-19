@@ -26,7 +26,11 @@ const FooterMenu = () => {
         <ul className={styles.footermenu}>
           <li className={styles.link}>© 2018 Petpit</li>
           {MenuElements.map(element => {
-            if (window.location.pathname !== element.link) {
+            // Gatsby sometimes crashes when trying to reach global variables during build, therefore I need to check if window is defined first
+            if (
+              typeof window !== 'undefined' &&
+              window.location.pathname !== element.link
+            ) {
               return (
                 <Link className={styles.link} to={element.link}>
                   <li>{element.name}</li>
